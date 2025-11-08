@@ -862,7 +862,7 @@ async function loadPhoneCodes() {
         countries.forEach((country) => {
             const phoneItem = document.createElement("li");
             phoneItem.innerHTML = `
-            <img src="assets/svg/${country.image}" alt="${country.name}">
+            <img src="...assets/svg/${country.image}" alt="${country.name}">
             <span>${country.code}</span>
             `;
             phoneList.appendChild(phoneItem);
