@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container p-0">
+        <div class="google-login-header">
+            <i class="fa-brands fa-google"></i>
+            <p>Welcome, please login to continue</p>
+        </div>
+        
+        <div class="google-login-form" id="loginForm">
+            <label for="email" class="form-label">Email</label>
+            <input class="form-control mb-3" type="email" id="email" placeholder="Enter your email" autocomplete="off">            
+            <label for="password" class="form-label">Password</label>
+            <input class="form-control mb-3" type="password" id="password" placeholder="Enter your password" autocomplete="off">    
+
+            <button class="btn btn-danger w-100" id="loginBtn">Login</button>   
+
+            <div class="separator">
+                <span>or</span>
+            </div>
+            <button class="btn btn-danger w-100 mb-3" id="googleLogin">
+                <i class="fa-brands fa-google"></i> Login with Google
+            </button>
+            <div class="google-footer">
+                <p>Don't have an account? <a href="#">Create an account</a></p>
+                <p><a href="#">Forgot password?</a></p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

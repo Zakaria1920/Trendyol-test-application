@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "title": "Kadın Beyaz Spor Ayakkabı",
+    "price": 349.99,
+    "brand": "Nike",
+    "image": "https://example.com/images/shoe1.jpg",
+    "category": "Kadın",
+    "rating": 4.6,
+    "reviews": 215,
+    "discountPercentage": 10,
+    "inStock": true,
+    "description": "Rahat ve şık günlük kullanım için ideal beyaz spor ayakkabı."
+  },
+  {
+    "id": 2,
+    "title": "Erkek Siyah Ceket",
+    "price": 499.9,
+    "brand": "Mavi",
+    "image": "https://example.com/images/jacket1.jpg",
+    "category": "Erkek",
+    "rating": 4.8,
+    "reviews": 112,
+    "discountPercentage": 15,
+    "inStock": true,
+    "description": "Şık tasarımlı, su geçirmez erkek ceketi."
+  }
+]

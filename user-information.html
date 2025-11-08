@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <h1 class="text-center p-3">User Information</h1>
+    <hr>
+    <form id="user-form" class="container needs-validation" novalidate>
+        <!-- name and surname -->
+        <div>
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" class="form-control mb-2" autocomplete="name" required>
+            <label for="surname" class="form-label">Surname:</label>
+            <input type="text" id="surname" name="surname" class="form-control mb-2" required>
+        </div>
+        <!-- phone and email -->
+        <div>
+            <label for="phone" class="form-label">Phone:</label>
+            <div class="d-flex align-items-center phone-inputs position-relative">
+                <div class="selected-phone-code">
+                    <img src="assets/svg/tr.svg" alt="">
+                    <span>TR</span>
+                    <i class="fa-solid fa-chevron-up fa-chevron-down"></i>
+                    <div class="phone-code-select-container"></div>
+                </div>
+                <input type="text" class="form-control" id="phone" name="phone" value="+90 " autocomplete="phone" required>
+            </div>
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control mb-2" autocomplete="email" placeholder="name@example.com" required>
+        </div>
+        <!-- country and city -->
+        <div class="d-flex align-items-center justify-content-evenly my-2">
+            <div class="d-flex align-items-center">
+            <label for="country" class="me-2">Country:</label>
+            <div class="selected-country-name">
+                <input type="text" name="country" id="country" value="Türkiye" autocomplete="country" readonly>
+                <i class="fa-solid fa-chevron-up fa-chevron-down"></i>
+                <div class="country-select-container"></div>
+            </div>
+            </div>
+            <div class="d-flex align-items-center">
+            <label for="city" class="me-2">City:</label>
+            <div class="selected-city-name">
+                <input type="text" name="city" id="city" value="Istanbul" readonly>
+                <i class="fa-solid fa-chevron-up fa-chevron-down"></i>
+                <div class="city-select-container"></div>
+            </div>
+            </div>
+        </div>
+        <!-- district and address -->
+        <label for="district" class="form-label">District:</label>
+        <input type="text" id="district" name="district" class="form-control mb-2" required>
+        <label for="address" class="form-label">Address:</label>
+        <input type="text" id="address" name="address" class="form-control mb-2" autocomplete="address" required>
+        <!-- card information -->
+        <label for="card-number" class="form-label">Card number:</label>
+        <input type="text" id="card-number" name="card-number" class="form-control mb-2" placeholder="xxxx xxxx xxxx xxxx" required>
+        <div>
+            <label for="card-owner" class="form-label">Card owner:</label>
+            <input type="text" id="card-owner" name="card-owner" class="form-control mb-2" required>
+            <!-- card expiration date  -->
+            <div class="d-inline-block card-expiration-date" style="width: 55%">
+                <label for="card-expiration-date" class="form-label">Card expiration date:</label>
+                <input type="text" id="card-expiration-date" name="card-expiration-date" class="form-control mb-2" value="xx/xx"
+                 data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" required>
+                <div class="picker-container offcanvas offcanvas-bottom" tabindex="-1" data-bs-backdrop="static" id="staticBackdrop" aria-labelledby="staticBackdropLabel" style="--bs-offcanvas-height: 34vh">
+                    <div class="offcanvas-header p-0">
+                        <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" id="close-btn">Tamam</button>
+                    </div>
+                    <div class="offcanvas-body overflow-hidden small d-flex gap-5 justify-content-center">
+                        <div class="picker" id="month-picker"></div>
+                        <div class="picker" id="year-picker"></div>
+                        <div class="highlight"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-inline-block ms-3" style="width:35%">
+                <label for="card-cvv" class="form-label">Card cvv:</label>
+                <input type="text" id="card-cvv" name="card-cvv" class="form-control mb-2" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 my-3">Submit</button>
+    </form>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

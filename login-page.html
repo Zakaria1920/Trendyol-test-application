@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container p-0">
+        <div class="login-header overflow-hidden position-relative">
+            <div class="d-flex align-items-center mb-3">
+                    <img src="assets/images/ty-web.svg" alt="Trendyol" class="w-50 m-auto">
+                    <button type="button" class="btn-close m-2 position-absolute top-0 end-0 fs-2" aria-label="Close" style="--bs-btn-close-bg: "">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+            </div>
+            <div class="login-control d-flex justify-content-center gap-2">
+                <input type="radio" class="btn-check" name="login-control" id="login-btn" autocomplete="off" checked>
+                <label class="btn text-light" for="login-btn">login</label>
+
+                <input type="radio" class="btn-check" name="login-control" id="register-btn" autocomplete="off">
+                <label class="btn text-light" for="register-btn">register</label>
+            </div>
+        </div>
+        <div class="login-content p-3">
+            <form action="">
+                <div id="login-content">
+                    <input type="email" class="form-control my-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                    <div class="position-relative">
+                        <input type="password" class="form-control mb-3" id="exampleInputPassword1" placeholder="Password">
+                        <i class="fa-solid fa-eye-slash hide-password"></i>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#" class="text-primary">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn login-btn mb-3 text-light">Login</button>
+                </div>
+                <div id="register-content">
+                    <input type="email" class="form-control my-3" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Email">
+                    <div class="position-relative">
+                        <input type="password" class="form-control mb-3" id="exampleInputPassword2" placeholder="Password">
+                        <i class="fa-solid fa-eye-slash hide-password"></i>
+                    </div>
+                    <p class="text-secondary fs-8">your password must be at least 8 characters long. it must include at least one uppercase letter, one lowercase letter, one number, and one special character.</p>
+                    <div class="gender mb-3">
+                        <p>Gender (optional)</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <input type="radio" class="btn-check" name="gender" id="male-btn" autocomplete="off">
+                            <label for="male-btn">male</label>
+        
+                            <input type="radio" class="btn-check" name="gender" id="female-btn" autocomplete="off">
+                            <label for="female-btn">female</label>
+                        </div>
+                    </div>
+                    <div class="privacy">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <input type="checkbox" id="privacy">
+                            <label for="privacy">I agree to the <a href="#">privacy policy</a></label>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <input type="checkbox" id="terms">
+                            <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <input type="checkbox" id="cookies">
+                            <label for="cookies">I agree to the <a href="#">cookies policy</a></label>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <input type="checkbox" id="all-conditions" required>
+                            <label for="all-conditions">I agree to the <a href="#">all conditions</a></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn login-btn mb-3 text-light">sign up</button>
+                    <p class="text-secondary fs-7 m-0">by clicking sign up, you agree to our <a href="#" class="text-secondary">terms and conditions</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="social-connect p-3 d-flex justify-content-center gap-2">
+            <a href="facebook-login.html">
+                <div class="facebook d-flex justify-content-center align-items-center gap-4 border">
+                    <i class="fa-brands fa-facebook text-primary"></i>
+                    <div>
+                        <p>Facebook</p>
+                    <p class="text-secondary">Connect with</p>
+                </div>
+            </div>
+            </a>
+            <a href="google-login.html">
+            <div class="google d-flex justify-content-center align-items-center gap-4 border">
+                <i class="fa-brands fa-google text-danger"></i>
+                <div>
+                    <p>Google</p>
+                    <p class="text-secondary">Connect with</p>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

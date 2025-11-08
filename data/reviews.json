@@ -1,0 +1,16 @@
+[
+  {
+    "productId": 1,
+    "userId": 101,
+    "rating": 5,
+    "comment": "Ürün çok kaliteli, hızlı teslimat için teşekkürler!",
+    "date": "2025-07-10"
+  },
+  {
+    "productId": 2,
+    "userId": 102,
+    "rating": 4,
+    "comment": "Görseldeki gibi, fakat bedeni biraz küçük geldi.",
+    "date": "2025-07-08"
+  }
+]

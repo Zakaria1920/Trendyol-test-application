@@ -1,0 +1,19 @@
+[
+  {
+    "orderId": 201,
+    "userId": 101,
+    "items": [
+      {
+        "productId": 1,
+        "quantity": 1
+      },
+      {
+        "productId": 2,
+        "quantity": 2
+      }
+    ],
+    "totalPrice": 1349.79,
+    "status": "Delivered",
+    "date": "2025-07-09"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "id": 101,
+    "name": "Ahmet Yılmaz",
+    "email": "ahmetyilmaz@example.com",
+    "address": {
+      "city": "Istanbul",
+      "street": "Beylikdüzü Mah. 12. Sokak No:34",
+      "zipcode": "34520"
+    },
+    "orders": [
+      201,
+      202
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Elif Kaya",
+    "email": "elifkaya@example.com",
+    "address": {
+      "city": "Ankara",
+      "street": "Çankaya Caddesi No:9",
+      "zipcode": "06510"
+    },
+    "orders": []
+  }
+]
