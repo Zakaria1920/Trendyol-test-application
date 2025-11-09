@@ -862,7 +862,7 @@ async function loadPhoneCodes() {
         countries.forEach((country) => {
             const phoneItem = document.createElement("li");
             phoneItem.innerHTML = `
-            <img src="/assets/svg/${country.image}" alt="${country.name}">
+            <img src="images/assets/svg/${country.image}" alt="${country.name}">
             <span>${country.code}</span>
             `;
             phoneList.appendChild(phoneItem);
@@ -944,7 +944,7 @@ const selectedCountry = qs(".selected-country-name");
 const countrySelect = qs(".country-select-container");
 async function loadCountries() {
     try {
-        const response = await fetch("/data/Countries-and-Cities.json");
+        const response = await fetch("data/countries-and-cities.json");
         const data = await response.json();
         const countries = Object.keys(data);
         const countryList = document.createElement("ul");
@@ -1006,7 +1006,7 @@ const citySelect = qs(".city-select-container");
 async function loadCities(country) {
     citySelect.innerHTML = "";
     try {
-        const response = await fetch("/data/Countries-and-Cities.json");
+        const response = await fetch("data/countries-and-cities.json");
         const data = await response.json();
         const cities = data[country];
         const cityList = document.createElement("ul");
