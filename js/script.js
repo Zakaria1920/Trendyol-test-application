@@ -872,7 +872,7 @@ async function loadPhoneCodes() {
                 phoneItem.classList.add("active");
                 const prefix = country.dial_code;
                 currentPrefix = prefix;
-                selectedItem.querySelector("img").src = `/assets/svg/${country.image.toLowerCase()}`;
+                selectedItem.querySelector("img").src = `../assets/svg/${country.image.toLowerCase()}`;
                 selectedItem.querySelector("span").textContent = country.code;
                 phoneSelect.classList.remove("active");
                 selectedItem.querySelector("i").classList.toggle("fa-chevron-down");
