@@ -74,8 +74,9 @@ a {
 /* menu */
 .side-menu .offcanvas-header {
     background-image: var(--header-bg-img);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
 .side-menu .back {
     cursor: pointer;
