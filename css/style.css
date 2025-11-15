@@ -6,11 +6,20 @@
     --main-color: #c78b1d;
 }
 body {
-    font-family: cursive;
+    font-family: sans-serif;
 }
 a {
     text-decoration: none;
     color: inherit;
+}
+.logo-img {
+    width: 100%;
+    transform: scaleY(0.84);
+}
+@media (max-width: 768px) {
+    .logo-img {
+        width: 60%;
+    }
 }
 .centering {
     display: flex;
@@ -366,7 +375,6 @@ a {
 /* index page end */
 /* login page */
 .login-header {
-    background-image: linear-gradient(to bottom, #ff5b51 2%, #ff6737 36%, #ff6a30 79%, #ff7617 98%);
     padding: 1rem 1rem 0;
 }
 #login-content,
@@ -387,6 +395,9 @@ a {
 .login-control .btn-check:checked + .btn {
     background-color: #222;
     color: var(--main-color);
+}
+.login-control :not(.btn-check:checked) + .btn:hover {
+    background-color: #ac7819;
 }
 .login-content input {
     font-size: 0.8rem;
