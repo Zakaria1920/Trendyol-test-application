@@ -139,14 +139,18 @@ a {
 .category-container {
     overflow: hidden;
     background-color: white;
+    border-bottom: 1px solid #222;
 }
+
 .category-container.fixed {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
     z-index: 1000;
     height: 49px;
     padding: 0 0.8rem;
+    box-shadow: 1px 1px 14px 7px gray;
 }
 .category-container ul {
     list-style: none;

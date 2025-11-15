@@ -128,12 +128,22 @@ if (qs(".category-container")) {
     });
     // fixed category
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 111) {
-            categoryContainer.classList.add("fixed");
-            spacer.style.height = categoryContainer.offsetHeight + "px";
+        if (parseInt(getComputedStyle(document.documentElement).width) < 768) {
+            if (window.scrollY > 111) {
+                categoryContainer.classList.add("fixed");
+                spacer.style.height = categoryContainer.offsetHeight + "px";
+            } else {
+                categoryContainer.classList.remove("fixed");
+                spacer.style.height = "0px";
+            }
         } else {
-            categoryContainer.classList.remove("fixed");
-            spacer.style.height = "0px";
+            if (window.scrollY > 52) {
+                categoryContainer.classList.add("fixed");
+                spacer.style.height = categoryContainer.offsetHeight + "px";
+            } else {
+                categoryContainer.classList.remove("fixed");
+                spacer.style.height = "0px";
+            }
         }
     });
 }
