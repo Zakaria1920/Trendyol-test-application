@@ -7,32 +7,104 @@ const qsa = (selector) => document.querySelectorAll(selector);
 
 // //***** for mobile *****//
 // // function for all horizontal scrolling
+// function enableHorizontalScroll(listId) {
+//     const list = qs(`#${listId}`);
+//     let maxScroll = list.scrollWidth - list.offsetWidth;
+//     let startX = 0;
+//     let lastX = parseInt(sessionStorage.getItem(`lastX_${listId}`)) || 0;
+
+//     function startTouch(e) {
+//           startX = e.touches[0].clientX + lastX;
+//     }
+  
+//     function moveTouch(e) {
+//       // prevent vertical scrolling
+//       e.preventDefault();
+//       const currentX = e.touches[0].clientX;
+//       let newScroll = startX - currentX;
+
+//       // Clamp within scroll range
+//       newScroll = Math.max(0, Math.min(newScroll, maxScroll));
+//       list.style.transform = `translateX(-${newScroll}px)`;
+//       lastX = newScroll;
+//       // save last scroll position
+//       sessionStorage.setItem(`lastX_${listId}`, newScroll);
+//     }
+  
+//     list.addEventListener("touchstart", startTouch, { passive: false });
+//     list.addEventListener("touchmove", moveTouch, { passive: false });
+// }
 function enableHorizontalScroll(listId) {
-    const list = qs(`#${listId}`);
+    const list = document.querySelector(`#${listId}`);
     let maxScroll = list.scrollWidth - list.offsetWidth;
+
     let startX = 0;
-    let lastX = parseInt(sessionStorage.getItem(`lastX_${listId}`)) || 0;
+    let lastScroll = parseFloat(sessionStorage.getItem(`lastX_${listId}`)) || 0;
+
+    // For momentum
+    let lastTouchX = 0;
+    let velocity = 0;
+    let lastMoveTime = 0;
+    let momentumFrame;
 
     function startTouch(e) {
-          startX = e.touches[0].clientX + lastX;
-    }
-  
-    function moveTouch(e) {
-      // prevent vertical scrolling
-      e.preventDefault();
-      const currentX = e.touches[0].clientX;
-      let newScroll = startX - currentX;
+        cancelAnimationFrame(momentumFrame); // stop old momentum
+        const touch = e.touches[0];
 
-      // Clamp within scroll range
-      newScroll = Math.max(0, Math.min(newScroll, maxScroll));
-      list.style.transform = `translateX(-${newScroll}px)`;
-      lastX = newScroll;
-      // save last scroll position
-      sessionStorage.setItem(`lastX_${listId}`, newScroll);
+        startX = touch.clientX + lastScroll;
+        lastTouchX = touch.clientX;
+        lastMoveTime = Date.now();
     }
-  
+
+    function moveTouch(e) {
+        e.preventDefault();
+
+        const touch = e.touches[0];
+        const now = Date.now();
+
+        let newScroll = startX - touch.clientX;
+
+        newScroll = Math.max(0, Math.min(newScroll, maxScroll));
+        list.style.transform = `translateX(-${newScroll}px)`;
+        lastScroll = newScroll;
+
+        // Store scroll
+        sessionStorage.setItem(`lastX_${listId}`, newScroll);
+
+        // Calculate velocity
+        let dx = lastTouchX - touch.clientX;
+        let dt = now - lastMoveTime;
+
+        velocity = dx / dt; // px per ms
+
+        lastTouchX = touch.clientX;
+        lastMoveTime = now;
+    }
+
+    function endTouch() {
+        function momentum() {
+            if (Math.abs(velocity) < 0.001) return;
+
+            lastScroll += velocity * 16; // 16ms per frame approx
+
+            // friction
+            velocity *= 0.95;
+
+            // clamp
+            lastScroll = Math.max(0, Math.min(lastScroll, maxScroll));
+            list.style.transform = `translateX(-${lastScroll}px)`;
+
+            sessionStorage.setItem(`lastX_${listId}`, lastScroll);
+
+            momentumFrame = requestAnimationFrame(momentum);
+        }
+
+        momentum();
+    }
+
     list.addEventListener("touchstart", startTouch, { passive: false });
     list.addEventListener("touchmove", moveTouch, { passive: false });
+    list.addEventListener("touchend", endTouch);
 }
 
 if (qs("#product-selection-scroll")) {
